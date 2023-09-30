@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .project {
+            margin-bottom: 30px;
+        }
+
+        .project h2 {
+            font-size: 24px;
+        }
+
+        .project p {
+            font-size: 16px;
+        }
+
+        /* Add your custom CSS styles here */
+
+        .image {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .cv {
+            margin-bottom: 30px;
+        }
+
+        .personal-writeup {
+            margin-bottom: 30px;
+        }
+
+        .files {
+            margin-bottom: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <p>Web Developer</p>
+    </header>
+    <div class="container">
+        <div class="image">
+            <img src="your-image.jpg" alt="Your Name">
+        </div>
+        <section class="cv">
+            <h2>CV</h2>
+            <p>Upload your CV or provide a link to it here.</p>
+        </section>
+        <section class="personal-writeup">
+            <h2>Personal Writeup</h2>
+            <p>Write a brief personal introduction or statement here.</p>
+        </section>
+        <section class="files">
+            <h2>Files</h2>
+            <form id="file-upload-form" enctype="multipart/form-data">
+                <label for="file">Choose a file:</label>
+                <input type="file" id="file" name="file" accept="application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                <br>
+                <label for="label">Label:</label>
+                <input type="text" id="label" name="label">
+                <br>
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option value="Category 1">Category 1</option>
+                    <option value="Category 2">Category 2</option>
+                    <option value="Category 3">Category 3</option>
+                </select>
+                <br>
+                <input type="submit" value="Upload File">
+            </form>
+        </section>
+        <section class="project">
+            <h2>Project 1</h2>
+            <p>Description of Project 1.</p>
+        </section>
+        <section class="project">
+            <h2>Project 2</h2>
+            <p>Description of Project 2.</p>
+        </section>
+        <!-- Add more project sections as needed -->
+    </div>
+
+    <script>
+        document.getElementById("file-upload-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            
+            // Get the file input, label input, and category select elements
+            const fileInput = document.getElementById("file");
+            const labelInput = document.getElementById("label");
+            const categorySelect = document.getElementById("category");
+    
+            // Get the selected file
+            const file = fileInput.files[0];
+    
+            // Get the label and category values
+            const label = labelInput.value;
+            const category = categorySelect.value;
+    
+            // Display the file details, label, and category in an alert
+            alert(`File Name: ${file.name}\nLabel: ${label}\nCategory: ${category}`);
+    
+            // Reset the form (you can remove this if not needed)
+            this.reset();
+        });
+    </script>
+    
+</body>
+</html>
